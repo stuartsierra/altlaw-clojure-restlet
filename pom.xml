@@ -25,6 +25,31 @@
       <groupId>org.altlaw</groupId>
       <artifactId>swank-clojure</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.restlet</groupId>
+      <artifactId>org.restlet</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.noelios.restlet</groupId>
+      <artifactId>com.noelios.restlet</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.noelios.restlet</groupId>
+      <artifactId>com.noelios.restlet.ext.httpclient</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.noelios.restlet</groupId>
+      <artifactId>com.noelios.restlet.ext.jetty</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.noelios.restlet</groupId>
+      <artifactId>com.noelios.restlet.ext.servlet</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>1.4</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -33,6 +58,9 @@
         <groupId>org.altlaw</groupId>
         <artifactId>clojure-maven-plugin</artifactId>
         <version>1.1-SNAPSHOT</version>
+        <configuration>
+          <testScript>src/scripts/runtests.clj</testScript>
+        </configuration>
         <executions>
           <execution>
             <id>compile-clojure</id>

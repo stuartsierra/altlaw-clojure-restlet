@@ -21,7 +21,7 @@
   (let [component (make-component 13999 (make-dummy-app))]
     (.start component)
     (check-response)
-    (stop-component component)))
+    (.stop component)))
 
 (deftest t-with-server
   (with-server 13999 (make-dummy-app)

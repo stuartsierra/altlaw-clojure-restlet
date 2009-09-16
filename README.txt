@@ -1,4 +1,4 @@
-
+altlaw-clojure-restlet - Clojure/Restlet integration library
 
 This source code repository contains code used to develop AltLaw.org,
 a free legal research web site.

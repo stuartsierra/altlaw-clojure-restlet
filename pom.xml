@@ -38,14 +38,6 @@
       <artifactId>com.noelios.restlet.ext.httpclient</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.noelios.restlet</groupId>
-      <artifactId>com.noelios.restlet.ext.jetty</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.noelios.restlet</groupId>
-      <artifactId>com.noelios.restlet.ext.servlet</artifactId>
-    </dependency>
-    <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
       <scope>test</scope>

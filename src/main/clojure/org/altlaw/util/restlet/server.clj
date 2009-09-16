@@ -30,4 +30,4 @@
   `(let [server# (make-component ~port ~app)]
      (.start server#)
      (try ~@body
-          (finally (stop-component c)))))
+          (finally (stop-component server#)))))

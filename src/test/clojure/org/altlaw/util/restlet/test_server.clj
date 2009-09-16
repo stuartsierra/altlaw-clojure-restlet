@@ -12,10 +12,17 @@
             (.setEntity response
                         (StringRepresentation. "Hello, World!")))))
 
+(defn check-response []
+  (is (= "Hello, World!"
+         (IOUtils/toString  ;; quick & dirty HTTP client
+          (.openStream (URL. "http://127.0.0.1:13999/"))))))
+
 (deftest t-make-server
   (let [component (make-component 13999 (make-dummy-app))]
     (.start component)
-    (is (= "Hello, World!"
-           (IOUtils/toString
-            (.openStream (URL. "http://127.0.0.1:13999/")))))
+    (check-response)
     (stop-component component)))
+
+(deftest t-with-server
+  (with-server 13999 (make-dummy-app)
+    (check-response)))

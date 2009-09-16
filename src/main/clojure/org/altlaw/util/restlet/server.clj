@@ -15,14 +15,6 @@
     (.. com getDefaultHost (attach app))
     com))
 
-(defn stop-component
-  "Stops the Component c and ensures it releases all ports."
-  [c]
-  (.stop c)
-  ;; make sure the server port is released
-  (.. c getServers clear)
-  (Thread/sleep 1000))
-
 (defmacro with-server
   "Starts a Component running on port with app as the default Restlet,
   runs body, then shuts down the Component."
@@ -30,4 +22,4 @@
   `(let [server# (make-component ~port ~app)]
      (.start server#)
      (try ~@body
-          (finally (stop-component server#)))))
+          (finally (.stop server#)))))
